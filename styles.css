@@ -202,7 +202,11 @@ footer {
     padding: 24px 5vw 12px 5vw;
 }
 .socials {
-    margin-bottom: 10px;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 .socials a {
     color: #fff;
@@ -213,6 +217,47 @@ footer {
 }
 .socials a:hover {
     color: #eb0028;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    transition: box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: none;
+    outline: none;
+}
+.social-icon svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+.social-icon.instagram:hover svg rect {
+    fill: #E4405F;
+}
+.social-icon.instagram:hover svg path,
+.social-icon.instagram:hover svg circle {
+    stroke: #fff;
+    fill: #fff;
+}
+.social-icon.facebook:hover svg rect {
+    fill: #1877F3;
+}
+.social-icon.facebook:hover svg path {
+    fill: #fff;
+}
+.social-icon.youtube:hover svg rect {
+    fill: #FF0000;
+}
+.social-icon.youtube:hover svg path {
+    fill: #fff;
+}
+.social-icon:focus {
+    box-shadow: 0 0 0 2px #222;
 }
 .license {
     font-size: 0.95rem;
