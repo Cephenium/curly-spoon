@@ -322,10 +322,11 @@ nav a:hover, nav a:focus {
     background: #e62b1e;
     color: #fff;
 }
-.mapbox {
+.contact .mapbox {
     margin-bottom: 2rem;
 }
-.mapbox iframe {
+
+.contact .mapbox iframe {
     border: none;
     border-radius: 10px;
     background-color: #000;

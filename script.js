@@ -11,3 +11,38 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+    // Fluid nav indicator logic
+        const nav = document.querySelector('nav');
+        const indicator = nav.querySelector('.nav-indicator');
+        const navLinks = nav.querySelectorAll('a');
+
+        function moveIndicatorTo(link) {
+            const navRect = nav.getBoundingClientRect();
+            const linkRect = link.getBoundingClientRect();
+            indicator.style.left = (linkRect.left - navRect.left) + 'px';
+            indicator.style.width = linkRect.width + 'px';
+        }
+
+        function setActiveNav(e) {
+            navLinks.forEach(link => link.classList.remove('active', 'selected'));
+            this.classList.add('active', 'selected');
+            moveIndicatorTo(this);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', setActiveNav);
+        });
+
+        // On load, set indicator to first active or first link
+        window.addEventListener('DOMContentLoaded', () => {
+            const active = nav.querySelector('a.active') || navLinks[0];
+            active.classList.add('active', 'selected');
+            moveIndicatorTo(active);
+        });
+
+        // Responsive: move indicator on resize
+        window.addEventListener('resize', () => {
+            const active = nav.querySelector('a.active') || navLinks[0];
+            moveIndicatorTo(active);
+        });
