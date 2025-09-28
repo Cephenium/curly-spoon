@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDxJSSIS 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="/assets/logo.png" alt="TEDx Logo" class="logo">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#conference">2025 Conference</a>
+            <div class="dropdown">
+                <a href="#connect" class="dropdown-toggle">Connect</a>
+                <div class="dropdown-menu">
+                    <a href="#contact">Contact</a>
+                    <a href="#donate">Donate</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#partners" class="dropdown-toggle">Partners</a>
+                <div class="dropdown-menu">
+                    <a href="#partners">Our Partners</a>
+                    <a href="https://www.tedxsouthlake.com/become-a-partner" target="_blank">Become a Partner</a>
+                </div>
+            </div>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+        </nav>
+        <a href="https://www.zeffy.com/en-US/ticketing/annual-gala-465" target="_blank" class="ticket-btn">Get Tickets</a>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <h1>Celebrating the Inaugural Edition of TEDxJSSIS Dubai</h1>
+            <h2>Join Us for a Transformative Experience!</h2>
+            <p class="theme">Written Together: <span>The IDEAS Among Us</span></p>
+            <a href="https://calendar.app.google/" target="_blank" class="calendar-btn">Add to Google Calendar</a>
+        </section>
+        <section class="info" id="conference">
+            <img src="https://static.wixstatic.com/media/88a847_00ae0a4fc5274ca2b69da1b00dd00c37~mv2.jpg/v1/crop/x_874,y_0,w_4596,h_3953/fill/w_862,h_728,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC07271.jpg" alt="TEDxSouthlake Event" class="event-img">
+            <div class="details">
+                <h3>What to Expect:</h3>
+                <ul>
+                    <li><strong>Visionary Speakers:</strong> Hear from thought leaders, innovators, and change-makers who will share their unique perspectives and ideas that are shaping the world.</li>
+                    <li><strong>Collaborative Experiences:</strong> Engage in thought-provoking conversations and connect with a diverse group of people who are passionate about making a difference.</li>
+                    <li><strong>Inspiring Talks:</strong> From science to social change, technology to creativity, our speakers will challenge your thinking and inspire action.</li>
+                    <li><strong>Networking Opportunities:</strong> Meet like-minded individuals, share ideas, and form lasting connections with community leaders, entrepreneurs, and thinkers.</li>
+                </ul>
+                <p class="date-location"><strong>Date:</strong> Sunday, January 9, 2026<br>
+                <strong>embed google map here:</strong> <a href="https://www.google.com/maps/place/Frontiers+of+Flight+Museum/@32.8471,-96.8518,17z/data=!3m1!4b1!4m5!3m4!1s0x864c1f1c1c1c1c1c:0x1c1c1c1c1c1c1c1c!8m2!3d32.8471!4d-96.8496" target="_blank">Frontiers of Flight Museum, Dallas, TX</a></p>
+            </div>
+        </section>
+        <section class="cta">
+            <h3>Be Part of the Movement</h3>
+            <p>TEDxJSSIS is more than just an event—it’s an opportunity to be part of something bigger. A movement where ideas are written together, perspectives are shared, and change is ignited.</p>
+            <a href="https://www.tedxsouthlake.com/become-a-partner" target="_blank" class="sponsor-btn">Join us as Sponsor!</a>
+        </section>
+    </main>
+    <footer>
+        <div class="socials">
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            <a href="https://www.linkedin.com/company/tedxsouthlake/" target="_blank">LinkedIn</a>
+        </div>
+        <p class="license">This independent TEDx event is operated under license from TED.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    // Fluid nav indicator logic
+    const nav = document.querySelector('nav');
+    const indicator = nav.querySelector('.nav-indicator');
+    const navLinks = nav.querySelectorAll('a');
+
+    function moveIndicatorTo(link) {
+        const navRect = nav.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+        indicator.style.left = (linkRect.left - navRect.left) + 'px';
+        indicator.style.width = linkRect.width + 'px';
+    }
+
+    function setActiveNav(e) {
+        navLinks.forEach(link => link.classList.remove('active', 'selected'));
+        this.classList.add('active', 'selected');
+        moveIndicatorTo(this);
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', setActiveNav);
+    });
+
+    // On load, set indicator to first active or first link
+    window.addEventListener('DOMContentLoaded', () => {
+        const active = nav.querySelector('a.active') || navLinks[0];
+        active.classList.add('active', 'selected');
+        moveIndicatorTo(active);
+    });
+
+    // Responsive: move indicator on resize
+    window.addEventListener('resize', () => {
+        const active = nav.querySelector('a.active') || navLinks[0];
+        moveIndicatorTo(active);
+    });
+    </script>
+</body>
+</html>
