@@ -9,12 +9,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 24px 5vw 12px 5vw;
+    padding: 2px 5vw 12px 5vw;
     background: #232323;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     position: relative;
     z-index: 10;
-    gap: 18px;
+    gap: 8px;
 }
 .logo {
     height: 36px;
