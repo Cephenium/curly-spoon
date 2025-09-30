@@ -351,7 +351,7 @@ nav a:hover, nav a:focus {
     display: flex;
 }
 .dropdown-menu a {
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 0 1.1rem; /* Remove vertical padding, keep horizontal */
     height: 40px; /* Slightly taller for better touch/click area */
     display: flex;
