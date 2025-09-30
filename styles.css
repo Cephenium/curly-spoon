@@ -246,20 +246,20 @@ footer {
 }
 .social-icon.instagram:hover svg path,
 .social-icon.instagram:hover svg circle {
-    stroke: #fff;
+    stroke: #eb0028;
     fill: #fff;
 }
 .social-icon.facebook:hover svg rect {
     fill: #1877F3;
 }
 .social-icon.facebook:hover svg path {
-    fill: #fff;
+    fill: #eb0028;
 }
 .social-icon.youtube:hover svg rect {
     fill: #FF0000;
 }
 .social-icon.youtube:hover svg path {
-    fill: #fff;
+    fill: #eb0028;
 }
 .social-icon:focus {
     box-shadow: 0 0 0 2px #222;
