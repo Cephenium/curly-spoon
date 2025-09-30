@@ -461,3 +461,45 @@ nav a:hover, nav a:focus {
   background: #e4405f;
   color: #181818;
 }
+footer .wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0 auto 1rem auto;
+    list-style: none;
+    width: 100%;
+}
+footer .icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #181818;
+    border-radius: 50%;
+    margin: 10px 0;
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+footer .icon svg {
+    margin: 0 auto;
+    display: block;
+}
+@media (max-width: 600px) {
+    footer .wrapper {
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100%;
+    }
+    footer .icon {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+        margin: 6px 0;
+    }
+}
