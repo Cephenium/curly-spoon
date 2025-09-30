@@ -377,129 +377,88 @@ nav a:hover, nav a:focus {
 }
 /* From Uiverse.io by david-mohseni */ 
 .wrapper {
-  display: inline-flex;
-  list-style: none;
-  height: 120px;
-  width: 100%;
-  padding-top: 40px;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2.5rem !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 auto 1.5rem auto !important;
+  list-style: none !important;
 }
 
 .wrapper .icon {
-  position: relative;
-  background: #181818;
-  border-radius: 50%;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #181818 !important;
+  border-radius: 50% !important;
+  margin: 0 !important;
+  width: 70px !important;
+  height: 70px !important;
+  font-size: 28px !important;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  position: relative !important;
 }
 
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #181818;
-  color: #181818;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.wrapper .icon svg {
+  margin: 0 auto !important;
+  display: block !important;
 }
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #181818;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.tooltip {
+  position: absolute !important;
+  top: -48px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  font-size: 1.1rem !important;
+  background: #e4405f !important;
+  color: #fff !important;
+  padding: 7px 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  z-index: 10 !important;
+  white-space: nowrap !important;
+  font-weight: 600 !important;
 }
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.tooltip::before {
+  position: absolute !important;
+  content: "" !important;
+  height: 12px !important;
+  width: 12px !important;
+  background: #e4405f !important;
+  bottom: -6px !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(45deg) !important;
+  z-index: 9 !important;
 }
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877f2;
-  color: #181818;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1da1f2;
-  color: #181818;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #e4405f;
-  color: #181818;
-}
-footer .wrapper {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0 auto 1rem auto;
-    list-style: none;
-    width: 100%;
-}
-footer .icon {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: #181818;
-    border-radius: 50%;
-    margin: 10px 0;
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-footer .icon svg {
-    margin: 0 auto;
-    display: block;
+.icon:hover .tooltip,
+.icon:focus .tooltip {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  top: -60px !important;
 }
 @media (max-width: 600px) {
-    footer .wrapper {
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100%;
-    }
-    footer .icon {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
-        margin: 6px 0;
-    }
+  .wrapper {
+    gap: 1.2rem !important;
+  }
+  .wrapper .icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+  }
+  .tooltip {
+    font-size: 0.95rem !important;
+    padding: 5px 10px !important;
+    top: -38px !important;
+  }
+  .tooltip::before {
+    height: 8px !important;
+    width: 8px !important;
+    bottom: -4px !important;
+  }
 }
