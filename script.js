@@ -12,40 +12,40 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-    // Fluid nav indicator logic
-        const nav = document.querySelector('nav');
-        const indicator = nav.querySelector('.nav-indicator');
-        const navLinks = nav.querySelectorAll('a');
+// Fluid nav indicator logic
+const nav = document.querySelector('nav');
+const indicator = nav.querySelector('.nav-indicator');
+const navLinks = nav.querySelectorAll('a');
 
-        function moveIndicatorTo(link) {
-            const navRect = nav.getBoundingClientRect();
-            const linkRect = link.getBoundingClientRect();
-            indicator.style.left = (linkRect.left - navRect.left) + 'px';
-            indicator.style.width = linkRect.width + 'px';
-        }
+function moveIndicatorTo(link) {
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    indicator.style.left = (linkRect.left - navRect.left) + 'px';
+    indicator.style.width = linkRect.width + 'px';
+}
 
-        function setActiveNav(e) {
-            navLinks.forEach(link => link.classList.remove('active', 'selected'));
-            this.classList.add('active', 'selected');
-            moveIndicatorTo(this);
-        }
+function setActiveNav(e) {
+    navLinks.forEach(link => link.classList.remove('active', 'selected'));
+    this.classList.add('active', 'selected');
+    moveIndicatorTo(this);
+}
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', setActiveNav);
-        });
+navLinks.forEach(link => {
+    link.addEventListener('click', setActiveNav);
+});
 
-        // On load, set indicator to first active or first link
-        window.addEventListener('DOMContentLoaded', () => {
-            const active = nav.querySelector('a.active') || navLinks[0];
-            active.classList.add('active', 'selected');
-            moveIndicatorTo(active);
-        });
+// On load, set indicator to first active or first link
+window.addEventListener('DOMContentLoaded', () => {
+    const active = nav.querySelector('a.active') || navLinks[0];
+    active.classList.add('active', 'selected');
+    moveIndicatorTo(active);
+});
 
-        // Responsive: move indicator on resize
-        window.addEventListener('resize', () => {
-            const active = nav.querySelector('a.active') || navLinks[0];
-            moveIndicatorTo(active);
-        });
+// Responsive: move indicator on resize
+window.addEventListener('resize', () => {
+    const active = nav.querySelector('a.active') || navLinks[0];
+    moveIndicatorTo(active);
+});
 document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('name').value.trim();
@@ -69,14 +69,19 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         formMsg.textContent = 'Thank you for your message! We will get back to you soon.';
         this.reset();
     });
-            document.querySelectorAll('.team-card').forEach(card => {
-            card.addEventListener('click', function () {
-                this.classList.toggle('flipped');
-            });
-            card.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.classList.toggle('flipped');
-                }
-            });
-        });
+
+// Flip effect for grid cards: click or keyboard (Enter/Space) to flip
+
+document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', function (e) {
+        // Only flip if not clicking inside a link or button
+        if (e.target.closest('a,button')) return;
+        card.classList.toggle('flipped');
+    });
+    card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.classList.toggle('flipped');
+        }
+    });
+});
