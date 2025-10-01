@@ -46,3 +46,37 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             const active = nav.querySelector('a.active') || navLinks[0];
             moveIndicatorTo(active);
         });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const formMsg = document.getElementById('formMsg');
+        formMsg.style.color = '#eb0028';
+        // Simple validation
+        if (!name || !email || !message) {
+            formMsg.textContent = 'Please fill in all required fields.';
+            return;
+        }
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            formMsg.textContent = 'Please enter a valid email address.';
+            return;
+        }
+        // Simulate sending (replace with real backend integration as needed)
+        formMsg.style.color = '#2ecc40';
+        formMsg.textContent = 'Thank you for your message! We will get back to you soon.';
+        this.reset();
+    });
+            document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('click', function () {
+                this.classList.toggle('flipped');
+            });
+            card.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.classList.toggle('flipped');
+                }
+            });
+        });
