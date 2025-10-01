@@ -83,7 +83,6 @@
     <CENTER>
     <ul class="wrapper">
       <li class="icon gmail">
-        <span class="tooltip">Gmail</span>
         <a href="mailto:tedxjssis@gmail.com" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: #fff;">
           <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 48 48" fill="none">
             <rect x="6" y="12" width="36" height="24" rx="6" stroke="#fff" stroke-width="2.5" fill="none"/>
@@ -92,16 +91,14 @@
         </a>
       </li>
       <li class="icon youtube">
-        <span class="tooltip">YouTube</span>
         <a href="https://www.youtube.com/" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: #fff;">
           <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 48 48" fill="none">
             <rect x="8" y="14" width="32" height="20" rx="6" stroke="#fff" stroke-width="2.5" fill="none"/>
-            <polygon points="22,20 32,24 22,28" stroke="#fff" stroke-width="2.5" fill="none"/>
+            <polygon points="20,18 32,24 20,30" fill="#fff"/>
           </svg>
         </a>
       </li>
       <li class="icon instagram" onclick="window.open('https://www.instagram.com/tedxjssis?igsh=MWM2anNsZTVka2F1bg==', '_blank')" style="cursor:pointer;">
-        <span class="tooltip">Instagram</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 48 48" fill="none">
           <rect x="10" y="10" width="28" height="28" rx="8" stroke="#fff" stroke-width="2.5" fill="none"/>
           <circle cx="24" cy="24" r="8" stroke="#fff" stroke-width="2.5" fill="none"/>
@@ -113,6 +110,18 @@
     <p class="license">This independent TEDx event is operated under license from TED.</p>
   </footer>
   <script src="script.js"></script>
+  <style>
+.wrapper .icon {
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.wrapper .icon:hover, .wrapper .icon:focus {
+  background: #eb0028 !important;
+  box-shadow: 0 10px 24px rgba(230,43,30,0.18);
+}
+.wrapper .icon .tooltip {
+  display: none !important;
+}
+</style>
 </body>
 
 </html>
