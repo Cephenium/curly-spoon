@@ -100,10 +100,7 @@ nav a::after {
     padding: 60px 10vw 30px 10vw;
     background-image: url("Cephenium/curly-spoon/assets/bakgrnd.jpg");
      background-size: contain;
-  background-repeat: no-repeat; /* Prevents the image from tiling */
-  background-position: center; /* Centers the image within the element */
-  width: 500px;
-  height: 300px;
+
   border: 1px solid rgb(255, 255, 255);
 }
 .hero h1 {
