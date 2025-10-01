@@ -98,10 +98,7 @@ nav a::after {
 .hero {
     text-align: center;
     padding: 60px 10vw 30px 10vw;
-    background-image: url("https://raw.githubusercontent.com/Cephenium/curly-spoon/assets/bakgrnd.jpg");
-     background-size: contain;
-
-  border: 1px solid rgb(255, 255, 255);
+    background: #232323;
 }
 .hero h1 {
     font-size: 2.5rem;
@@ -167,8 +164,20 @@ nav a::after {
     line-height: 1.5;
 }
 .date-location {
-    margin-top: 18px;
-    font-weight: 600;
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 12px 0 16px 0; /* Reduced top margin from 32px to 12px */
+    letter-spacing: 0.02em;
+}
+.date-location .date-label {
+    color: #eb0028;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.date-location .date-value {
+    color: #fff;
+    font-weight: 400;
 }
 .cta {
     background: #eb0028;
@@ -586,4 +595,13 @@ main {
     max-width: 340px;
     height: 320px;
   }
+}
+.mapbox iframe {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
