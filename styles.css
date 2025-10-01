@@ -98,7 +98,7 @@ nav a::after {
 .hero {
     text-align: center;
     padding: 60px 10vw 30px 10vw;
-    background-image: url("Cephenium/curly-spoon/assets/bakgrnd.jpg");
+    background-image: url("https://raw.githubusercontent.com/Cephenium/curly-spoon/assets/bakgrnd.jpg");
      background-size: contain;
 
   border: 1px solid rgb(255, 255, 255);
